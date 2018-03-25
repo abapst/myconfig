@@ -1,2 +1,2 @@
 # bashrc
-Collection of useful bashrc functions.
+A collection of useful bashrc functions.
