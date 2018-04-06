@@ -3,6 +3,9 @@
 # File & string-related functions:
 #-------------------------------------------------------------
 
+alias rm="rm -i"
+alias mv="mv -i"
+
 # Find a file with a pattern in name:
 function ff() { find . -type f -iname '*'$*'*' -ls ; }
 
