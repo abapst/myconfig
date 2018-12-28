@@ -1,8 +1,8 @@
-# bashrc
-A collection of useful bashrc functions.
+# config
+My bashrc and tmux config preferences
 
 ## Installation
 
 ```
-cat bashrc >> .bashrc
+./install.sh
 ```
