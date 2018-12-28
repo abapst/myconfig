@@ -1,5 +1,5 @@
 # config
-My bashrc and tmux config preferences
+My bashrc and tmux config preferences.
 
 ## Installation
 
