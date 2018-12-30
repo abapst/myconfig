@@ -3,6 +3,10 @@
 # File & string-related functions:
 #-------------------------------------------------------------
 
+# Bash prompt
+export PS1="[\[\e[01;49;91m\]\u\[\e[00m\]\[\e[01;49;91m\]@\H\[\e[00m\]][\[\e[1;49;34m\]\W\[\e[0m\]]$ "
+
+ #Safe file deletion
 alias rm="rm -i"
 alias mv="mv -i"
 
