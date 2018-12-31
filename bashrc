@@ -1,6 +1,6 @@
 
 #-------------------------------------------------------------
-# File & string-related functions:
+# abapst_config_start
 #-------------------------------------------------------------
 
 # Bash prompt
@@ -39,3 +39,7 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
     find . -type f -name "${2:-*}" -print0 | \
     xargs -0 egrep -H --color=always -sn ${case} "$1" 2>&- | more
 }
+
+#-------------------------------------------------------------
+# abapst_config_end
+#-------------------------------------------------------------

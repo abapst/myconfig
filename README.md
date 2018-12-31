@@ -1,5 +1,6 @@
-# config
-My bashrc and tmux config preferences.
+# myconfig
+
+Automagically configures my bashrc, vimrc, and tmux preferences to the local machine.
 
 ## Installation
 
