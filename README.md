@@ -5,5 +5,6 @@ Automagically configures my bashrc, vimrc, and tmux preferences to the local mac
 ## Installation
 
 ```
-./install.sh
+cd myconfig
+. ./install.sh
 ```
