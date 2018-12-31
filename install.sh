@@ -12,6 +12,7 @@ then
 fi
 
 cat bashrc >> $BASHRC_FILE
+source $BASHRC_FILE
 
 echo "Configuring tmux..."
 cp .tmux.conf $HOME/.
