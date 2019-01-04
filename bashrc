@@ -40,6 +40,19 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
     xargs -0 egrep -H --color=always -sn ${case} "$1" 2>&- | more
 }
 
+function key-setup()
+{
+    KEYFILE=$HOME/.ssh/$1
+    echo 'Creating public key '$KEYFILE'.pub'
+    ssh-keygen -t rsa -b 4096 -f $KEYFILE -P '' -q
+    echo 'Installing key at '$2
+    cat $KEYFILE'.pub' | ssh $2 'mkdir -p .ssh && cat >> .ssh/authorized_keys'
+    ssh-add $KEYFILE
+    echo 'Creating bashrc alias '$1' --> '$2
+    echo 'alias '$1'="ssh -YC '$2'"' >> $HOME'/.bashrc'
+    echo 'Done.'
+}
+
 #-------------------------------------------------------------
 # abapst_config_end
 #-------------------------------------------------------------
