@@ -10,3 +10,7 @@ Automagically configures my bashrc, vimrc, and tmux preferences to the local mac
 cd myconfig
 . ./install.sh
 ```
+
+### Gnome-terminal color
+
+The gnome terminal background color is 0x000F1F
