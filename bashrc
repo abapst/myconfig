@@ -40,18 +40,31 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
     xargs -0 egrep -H --color=always -sn ${case} "$1" 2>&- | more
 }
 
+# create a public key login for a remote host
 function key-setup()
 {
+    # Usage: key-setup <hostname> <username>@<ip>
+
     KEYFILE=$HOME/.ssh/$1
     echo 'Creating public key '$KEYFILE'.pub'
     ssh-keygen -t rsa -b 4096 -f $KEYFILE -P '' -q
     echo 'Installing key at '$2
     cat $KEYFILE'.pub' | ssh $2 'mkdir -p .ssh && cat >> .ssh/authorized_keys'
     ssh-add $KEYFILE
+
     echo 'Creating bashrc alias '$1' --> '$2
+
+    # add lines to bashrc to add key to ssh agent
+    echo '' >> $HOME'/.bashrc'
+    echo '# login alias for '$1'' >> $HOME'/.bashrc'
+    echo 'ssh-add $HOME/.ssh/'$1'' >> $HOME'/.bashrc'
     echo 'alias '$1'="ssh -YC '$2'"' >> $HOME'/.bashrc'
+
     echo 'Done.'
 }
+
+# start up ssh-agent so it accepts public key logins
+eval "$(ssh-agent -s)"
 
 #-------------------------------------------------------------
 # abapst_config_end
